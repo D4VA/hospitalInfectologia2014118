@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="775.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.MedicoController">
+   <children>
+      <ImageView fitHeight="487.0" fitWidth="776.0" onKeyPressed="#seleccionarElemento" onMouseClicked="#seleccionarElemento" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="TOP" layoutX="352.0" layoutY="11.0" prefHeight="29.0" prefWidth="87.0" style="-fx-border-color: Gold; -fx-background-color: Gold;" text="Medicos" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" underline="true">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="63.0" text="Licencia Medico :" textFill="#fdfdff">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="16.0" layoutY="93.0" text="Nombres :" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="16.0" layoutY="122.0" text="Apellidos :" textFill="#fcfcfc">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="308.0" layoutY="97.0" text="Hora Entrada :" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="308.0" layoutY="129.0" text="Hora Salida :" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="306.0" layoutY="63.0" text="Turno Maximo:" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TextField fx:id="txtLicenciaMedica" editable="false" layoutX="121.0" layoutY="59.0" />
+      <TextField fx:id="txtNombre" editable="false" layoutX="84.0" layoutY="90.0" prefHeight="25.0" prefWidth="187.0" />
+      <TextField fx:id="txtApellidos" editable="false" layoutX="84.0" layoutY="120.0" prefHeight="25.0" prefWidth="187.0" />
+      <Label layoutX="16.0" layoutY="153.0" text="Sexo :" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TextField fx:id="txtSexo" editable="false" layoutX="60.0" layoutY="150.0" prefHeight="25.0" prefWidth="211.0" />
+      <TableView fx:id="tblMedicos" layoutX="84.0" layoutY="184.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="247.0" prefWidth="668.0">
+        <columns>
+          <TableColumn fx:id="colLicenciaMedica" prefWidth="104.0" text="Licencia Medico" />
+          <TableColumn fx:id="colNombres" prefWidth="98.0" text="Nombres" />
+            <TableColumn fx:id="colApellidos" minWidth="7.0" prefWidth="74.0" text="Apellidos" />
+            <TableColumn fx:id="colSexo" minWidth="8.0" prefWidth="50.0" text="Sexo" />
+            <TableColumn fx:id="colHoraEntrada" prefWidth="90.0" text="Hora Entrada" />
+            <TableColumn fx:id="colHoraSalida" minWidth="0.0" prefWidth="75.0" text="Hora Salida" />
+            <TableColumn fx:id="colTurnoMaximo" minWidth="4.0" prefWidth="91.0" text="Turno Maximo" />
+            <TableColumn fx:id="colCodMedico" minWidth="4.0" prefWidth="89.0" text="codMedico" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="16.0" layoutY="257.0" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+      <Button fx:id="btnEditar" layoutX="16.0" layoutY="301.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="59.0" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="16.0" layoutY="345.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnReportar" layoutX="16.0" layoutY="387.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <ImageView fitHeight="67.0" fitWidth="73.0" layoutX="693.0" layoutY="17.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Icono.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtTurnoMaximo" layoutX="395.0" layoutY="60.0" prefHeight="25.0" prefWidth="187.0" />
+      <TextField fx:id="txtHoraEntrada" layoutX="395.0" layoutY="94.0" prefHeight="25.0" prefWidth="187.0" />
+      <TextField fx:id="txtHoraSalida" layoutX="395.0" layoutY="129.0" prefHeight="25.0" prefWidth="187.0" />
+      <Button fx:id="btnReporteGeneral" layoutX="346.0" layoutY="450.0" mnemonicParsing="false" onAction="#imprimirReporte1" prefHeight="25.0" prefWidth="105.0" text="Reporte General" />
+   </children>
+</AnchorPane>

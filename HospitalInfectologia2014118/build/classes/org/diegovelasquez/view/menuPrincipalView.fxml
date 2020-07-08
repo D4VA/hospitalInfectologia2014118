@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="553.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="255.0" fitWidth="555.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoActual.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="25.0" prefWidth="553.0" style="-fx-background-color: gray;" stylesheets="@../style/Button.css">
+        <menus>
+          <Menu mnemonicParsing="false" text="Modulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#pacientes" text="Pacientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#medicos" text="Medicos" />
+                  <MenuItem mnemonicParsing="false" onAction="#turno" text="Turno" />
+                  <MenuItem mnemonicParsing="false" onAction="#telefonosMedicos" text="Telefonos Medicos" />
+                  <MenuItem mnemonicParsing="false" onAction="#contactoUrgencia" text="Contacto Urgencia" />
+                  <MenuItem mnemonicParsing="false" onAction="#areas" text="Areas" />
+                  <MenuItem mnemonicParsing="false" onAction="#horarios" text="Horarios" />
+                  <MenuItem mnemonicParsing="false" onAction="#especialidades" text="Especialidades" />
+                  <MenuItem mnemonicParsing="false" onAction="#cargos" text="Cargos" />
+                  <MenuItem mnemonicParsing="false" onAction="#responsableTurno" text="Responsable Turno" />
+                  <MenuItem mnemonicParsing="false" onAction="#medicoEspecialidad" text="Medico Especialidad" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Reportes">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte" text="Reporte Pacientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte1" text="Reporte Medicos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte2" text="Reporte Turno" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte3" text="Reporte Telefonos Medicos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte4" text="Reporte ContactoUrgencia" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte5" text="Reporte Areas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte6" text="Reporte Horarios" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte7" text="Reporte Especialidades" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte8" text="Reporte Cargos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte9" text="Reporte Responsable Turno" />
+                  <MenuItem mnemonicParsing="false" onAction="#ImprimirReporte10" text="Reporte Medico Especialidad" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Acerca De">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#programador" text="Programador" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Salida">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#login" text="Salir" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

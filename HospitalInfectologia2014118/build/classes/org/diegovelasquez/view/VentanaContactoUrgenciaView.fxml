@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.ContactoUrgenciaController">
+   <children>
+      <ImageView fitHeight="437.0" fitWidth="637.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="40.0" text="cod Contacto Urgencia :" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="70.0" text="Nombres :" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="102.0" text="Apellidos :" textFill="WHITE" />
+      <Label layoutX="306.0" layoutY="70.0" text="Numero Contacto :" textFill="WHITE" />
+      <Label layoutX="307.0" layoutY="40.0" text="Código Paciente :" textFill="WHITE" />
+      <TextField fx:id="txtNombres" layoutX="78.0" layoutY="67.0" prefHeight="25.0" prefWidth="223.0" />
+      <TextField fx:id="txtCodPaciente" layoutX="409.0" layoutY="36.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField fx:id="txtNumeroContacto" layoutX="409.0" layoutY="66.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField fx:id="txtApellidos" layoutX="78.0" layoutY="98.0" prefHeight="25.0" prefWidth="223.0" />
+      <TableView fx:id="tblContactoUrgencia" layoutX="14.0" layoutY="140.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="609.0">
+        <columns>
+          <TableColumn fx:id="colCodContactoUrgencia" prefWidth="140.0" text="cod Contacto Urgencia" />
+          <TableColumn fx:id="colCodPaciente" prefWidth="102.0" text="Código Paciente" />
+            <TableColumn fx:id="colNombres" prefWidth="119.0" text="Nombres" />
+            <TableColumn fx:id="colApellidos" prefWidth="116.0" text="Apellidos" />
+            <TableColumn fx:id="colNumeroContacto" prefWidth="130.0" text="Número Contacto" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="118.0" layoutY="352.0" mnemonicParsing="false" onAction="#Agregar" text="Guardar" />
+      <Button fx:id="btnEditar" layoutX="195.0" layoutY="352.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="59.0" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="274.0" layoutY="352.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnReportar" layoutX="357.0" layoutY="352.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <ImageView fitHeight="46.0" fitWidth="44.0" layoutX="580.0" layoutY="18.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Icono.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cmbCodContactoUrgencia" layoutX="144.0" layoutY="36.0" prefHeight="25.0" prefWidth="158.0" />
+      <Label layoutX="257.0" layoutY="4.0" style="-fx-background-color: gold;" text="Contacto Urgencia">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="584.0" layoutY="62.0" prefHeight="17.0" prefWidth="35.0" style="-fx-background-color: gold;" text="Volver" />
+   </children>
+</AnchorPane>

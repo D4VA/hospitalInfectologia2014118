@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.MedicoEspecialidadController">
+   <children>
+      <ImageView fitHeight="399.0" fitWidth="631.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="248.0" layoutY="14.0" style="-fx-background-color: gold;" text="Medico Especialidad">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="90.0" text="Codigo Especialidad :" textFill="WHITE" />
+      <Label layoutX="15.0" layoutY="60.0" text="Codigo medico especialidad :" textFill="WHITE" />
+      <Label layoutX="350.0" layoutY="60.0" text="Codigo Horario :" textFill="WHITE" />
+      <Label layoutX="350.0" layoutY="90.0" text="Código Medico:" textFill="WHITE" />
+      <ComboBox fx:id="cmbcodMedicoEspecialidad" layoutX="173.0" layoutY="56.0" prefWidth="150.0" />
+      <TextField fx:id="txtcodEspecialidad" editable="false" layoutX="174.0" layoutY="86.0" />
+      <TextField fx:id="txtcodHorario" editable="false" layoutX="447.0" layoutY="56.0" />
+      <TextField fx:id="txtcodMedico" editable="false" layoutX="447.0" layoutY="86.0" />
+      <TableView fx:id="tblMedicoEspecialidad" layoutX="129.0" layoutY="155.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="442.0">
+        <columns>
+          <TableColumn fx:id="colcodMedicoEspecialidad" prefWidth="150.0" text="Cod. Medico Especialidad" />
+          <TableColumn fx:id="colcodMedico" minWidth="0.0" prefWidth="82.0" text="Cod. Medico" />
+            <TableColumn fx:id="colcodHorario" minWidth="0.0" prefWidth="82.0" text="Cod. Horario" />
+            <TableColumn fx:id="colcodEspecialidad" minWidth="0.0" prefWidth="125.0" text="Cod. Especialidad" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="30.0" layoutY="170.0" mnemonicParsing="false" onAction="#Agregar" text="Guardar" />
+      <Button fx:id="btnEliminar" layoutX="30.0" layoutY="205.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="30.0" layoutY="240.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="59.0" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="30.0" layoutY="275.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <ImageView fitHeight="43.0" fitWidth="44.0" layoutX="559.0" layoutY="6.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Icono.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

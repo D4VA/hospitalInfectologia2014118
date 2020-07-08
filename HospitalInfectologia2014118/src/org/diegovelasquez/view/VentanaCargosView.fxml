@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.CargosController">
+   <children>
+      <ImageView fitHeight="353.0" fitWidth="575.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="45.0" text="Código Cargo :" textFill="WHITE" />
+      <Label layoutX="7.0" layoutY="89.0" text="Nombre de Cargo :" textFill="WHITE" />
+      <TextField fx:id="txtNombreCargo" editable="false" layoutX="110.0" layoutY="85.0" prefHeight="25.0" prefWidth="206.0" />
+      <TableView fx:id="tblCargos" layoutX="131.0" layoutY="125.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="211.0" prefWidth="269.0">
+        <columns>
+          <TableColumn fx:id="colCodCargo" prefWidth="131.0" text="Código Cargo" />
+          <TableColumn fx:id="colNombreArea" prefWidth="137.0" text="Nombre de Area" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="48.0" fitWidth="47.0" layoutX="460.0" layoutY="18.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Icono.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnAgregar" layoutX="54.0" layoutY="147.0" mnemonicParsing="false" onAction="#nuevo" text="Guardar" />
+      <Button fx:id="btnEliminar" layoutX="54.0" layoutY="192.0" mnemonicParsing="false" onAction="#Eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="54.0" layoutY="235.0" mnemonicParsing="false" onAction="#Editar" prefHeight="25.0" prefWidth="59.0" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="54.0" layoutY="277.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <Label layoutX="289.0" layoutY="8.0" style="-fx-background-color: gold;" text="Cargos">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbCodCargo" layoutX="110.0" layoutY="41.0" prefHeight="25.0" prefWidth="206.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.ResponsableTurnoController">
+   <children>
+      <ImageView fitHeight="476.0" fitWidth="764.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="317.0" layoutY="14.0" style="-fx-background-color: gold;" text="Responsable Turno">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="55.0" text="Código Responsable : " textFill="WHITE" />
+      <Label layoutX="20.0" layoutY="85.0" text="Nombre Responsable :" textFill="WHITE" />
+      <Label layoutX="20.0" layoutY="115.0" text="Apellidos Responsable :" textFill="WHITE" />
+      <Label layoutX="401.0" layoutY="56.0" text="Telefono Personal :" textFill="WHITE" />
+      <Label layoutX="401.0" layoutY="86.0" text="Código Área :" textFill="WHITE" />
+      <Label layoutX="401.0" layoutY="116.0" text="Código Cargo:" textFill="WHITE" />
+      <TextField fx:id="txtnomResponsableTurno" editable="false" layoutX="150.0" layoutY="81.0" />
+      <TextField fx:id="txtapellidosResponsableTurno" editable="false" layoutX="150.0" layoutY="110.0" />
+      <ComboBox fx:id="cmbcodResponsableTurno" layoutX="150.0" layoutY="51.0" prefWidth="150.0" />
+      <TextField fx:id="txttelefonoPersonal" editable="false" layoutX="502.0" layoutY="52.0" prefHeight="25.0" prefWidth="133.0" />
+      <TableView fx:id="tblResponsableTurno" layoutX="36.0" layoutY="187.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="690.0">
+        <columns>
+          <TableColumn fx:id="colcodResponsableTurno" prefWidth="107.0" text="Cod. Responsable" />
+          <TableColumn fx:id="colnombre" prefWidth="141.0" text="Nombre Responsable" />
+            <TableColumn fx:id="colapellidos" prefWidth="145.0" text="ApellidosResponsable" />
+            <TableColumn fx:id="coltelefonoPersonal" prefWidth="120.0" text="Teléfono Personal" />
+            <TableColumn fx:id="colcodArea" prefWidth="86.0" text="Código Área" />
+            <TableColumn fx:id="colcodCargo" prefWidth="89.0" text="Código Cargo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="200.0" layoutY="400.0" mnemonicParsing="false" onAction="#Agregar" text="Guardar" />
+      <Button fx:id="btnEliminar" layoutX="280.0" layoutY="400.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="360.0" layoutY="400.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="59.0" text="Editar" />
+      <Button fx:id="btnReportar" layoutX="440.0" layoutY="400.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <TextField fx:id="txtcodArea" editable="false" layoutX="486.0" layoutY="82.0" />
+      <TextField fx:id="txtcodCargo" editable="false" layoutX="486.0" layoutY="111.0" />
+      <ImageView fitHeight="60.0" fitWidth="59.0" layoutX="689.0" layoutY="14.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Icono.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

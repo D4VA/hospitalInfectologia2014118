@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteMedicoGeneral" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6b9ea057-b476-4775-88a4-4b1199c069a9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Programacion\\Documents\\NetBeansProjects\\Proyecto\\HospitalInfectologia2014118\\src\\org\\diegovelasquez\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_codMedico" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_BuscarMedico($P{p_codMedico})]]>
+	</queryString>
+	<field name="codMedico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="licenciaMedica" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaEntrada" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaSalida" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="turnoMaximo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Horarios">
+		<groupExpression><![CDATA[$F{codMedico}]]></groupExpression>
+		<groupFooter>
+			<band height="41">
+				<line>
+					<reportElement x="4" y="5" width="796" height="1" uuid="23b013f7-4586-47bc-a012-8d09dbeef564"/>
+					<graphicElement>
+						<pen lineWidth="2.5" lineColor="#0033CC"/>
+					</graphicElement>
+				</line>
+				<subreport>
+					<reportElement x="0" y="8" width="802" height="33" uuid="4e1e6bcf-e543-4f40-9d57-e9321aaf1131"/>
+					<subreportParameter name="p_codMedico">
+						<subreportParameterExpression><![CDATA[$F{codMedico}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "reporteMedicoGeneral_subreporteHorarios.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Especialidad">
+		<groupExpression><![CDATA[$F{codMedico}]]></groupExpression>
+		<groupFooter>
+			<band height="43">
+				<subreport>
+					<reportElement x="2" y="11" width="800" height="31" uuid="8ae25271-a923-4af0-a087-9a2a970d4b01"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "reporteMedicoGeneral_subreporteEspecialidad.jasper"]]></subreportExpression>
+				</subreport>
+				<line>
+					<reportElement x="4" y="4" width="796" height="1" uuid="fb4a28e6-5ae3-4274-9c57-f6bff6c031a1"/>
+					<graphicElement>
+						<pen lineWidth="2.5" lineColor="#0033CC"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Pacientes">
+		<groupExpression><![CDATA[$F{codMedico}]]></groupExpression>
+		<groupFooter>
+			<band height="33">
+				<subreport>
+					<reportElement x="4" y="6" width="798" height="27" uuid="3926b096-6bd9-4aa0-9c20-9e6fb82d20d7"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "reporteMedicoGeneral_subreportePacientes.jasper"]]></subreportExpression>
+				</subreport>
+				<line>
+					<reportElement x="3" y="5" width="797" height="1" uuid="3f8b17f3-bb71-4c98-b6e7-0b4e72728f70"/>
+					<graphicElement>
+						<pen lineWidth="2.5" lineColor="#0033FF"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="TurnoResponsable">
+		<groupExpression><![CDATA[$F{codMedico}]]></groupExpression>
+		<groupFooter>
+			<band height="37">
+				<subreport>
+					<reportElement x="2" y="4" width="797" height="29" uuid="cefa95b2-b9f2-425f-81c4-5db4ceb93c5b"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "reporteMedicoGeneral_subreporteResponsableTurno.jasper"]]></subreportExpression>
+				</subreport>
+				<line>
+					<reportElement x="4" y="4" width="796" height="1" uuid="4af313ec-a7e3-4bb1-bf14-f45af3d3384e"/>
+					<graphicElement>
+						<pen lineWidth="2.5" lineColor="#0066FF"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Area">
+		<groupExpression><![CDATA[$F{codMedico}]]></groupExpression>
+		<groupFooter>
+			<band height="27">
+				<subreport>
+					<reportElement x="4" y="0" width="795" height="27" uuid="6a6878aa-cf44-40d0-97c2-d330ceebdc2f"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "reporteMedicoGeneral_subreporteAreas.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Cargos">
+		<groupExpression><![CDATA[$F{codMedico}]]></groupExpression>
+		<groupFooter>
+			<band height="50">
+				<subreport>
+					<reportElement x="4" y="0" width="795" height="50" uuid="b3365119-2b7d-446f-b04c-17766db3c64f"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "reporteMedicoGeneral_subreporteCargos.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="14" y="0" width="530" height="62" uuid="c95d7d2a-9bd8-4b6d-b352-816edf116bf6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Reporte General Medico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="14" y="62" width="196" height="22" uuid="41a307e0-06fa-4f9d-94a4-3004a6d25e16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Reporte]]></text>
+			</staticText>
+			<image>
+				<reportElement x="592" y="0" width="208" height="84" uuid="1fc2491d-864e-4182-8d84-e2847a63d5a5"/>
+				<imageExpression><![CDATA["C:\\Users\\Programacion\\Documents\\NetBeansProjects\\Proyecto\\HospitalInfectologia2014118\\src\\org\\diegovelasquez\\images\\Logotipo.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="a5bdce26-c0ea-4fd9-aa05-0537ed853d76"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="100" height="15" forecolor="#736343" backcolor="#FFFFFF" uuid="961ffb41-66d8-4048-a16b-45f69b66106e"/>
+				<text><![CDATA[codMedico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="100" y="0" width="100" height="15" forecolor="#736343" uuid="8113829a-e143-4ae8-aca1-fa235012bdff"/>
+				<text><![CDATA[licenciaMedica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="200" y="0" width="100" height="15" forecolor="#736343" uuid="c582e26e-2a93-44ae-93fc-64657a1d4881"/>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="300" y="0" width="100" height="15" forecolor="#736343" uuid="5a535c89-188b-4fa6-a268-accceb24511f"/>
+				<text><![CDATA[apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="0" width="100" height="15" forecolor="#736343" uuid="eccc482e-605c-415e-adbb-824d872715eb"/>
+				<text><![CDATA[horaEntrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="500" y="0" width="100" height="15" forecolor="#736343" uuid="90cae2ba-6694-46f2-ac8c-eb7583be312c"/>
+				<text><![CDATA[horaSalida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="600" y="0" width="100" height="15" forecolor="#736343" uuid="dad97d56-fe4a-415f-a5da-e4512ad3fd90"/>
+				<text><![CDATA[turnoMaximo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="700" y="0" width="100" height="15" forecolor="#736343" uuid="55dd0265-61ac-40f2-8c82-96f5ddd4db05"/>
+				<text><![CDATA[sexo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="57f1fc8e-d30e-4123-9613-d5f3ff4447b0"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" mode="Opaque" x="0" y="0" width="100" height="15" backcolor="#FFFFFF" uuid="b9045a68-5ecc-4ca3-be22-cde349f89749"/>
+					<textFieldExpression><![CDATA[$F{codMedico}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="100" y="0" width="100" height="15" backcolor="#FFFFFF" uuid="71c4a5bb-d477-4214-be3e-4ca188b2e20a"/>
+					<textFieldExpression><![CDATA[$F{licenciaMedica}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="200" y="0" width="100" height="15" backcolor="#FFFFFF" uuid="7fa8fc55-fa71-4a1f-b9c9-a855b34bd756"/>
+					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="300" y="0" width="100" height="15" backcolor="#FFFFFF" uuid="0bdf4cfa-3d42-48d3-b744-6d3daa7ddcb6"/>
+					<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="0" width="100" height="15" backcolor="#FFFFFF" uuid="7e56e114-b840-41fa-856e-f1835d5527e7"/>
+					<textFieldExpression><![CDATA[$F{horaEntrada}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="500" y="0" width="100" height="15" backcolor="#FFFFFF" uuid="0a24f27e-1bfe-43e4-a415-154b6552fd7f"/>
+					<textFieldExpression><![CDATA[$F{horaSalida}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="600" y="0" width="100" height="15" backcolor="#FFFFFF" uuid="2bb433a8-ac6c-492a-8803-e98cc48e7e08"/>
+					<textFieldExpression><![CDATA[$F{turnoMaximo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="700" y="0" width="100" height="15" backcolor="#FFFFFF" uuid="9e3fa28c-aa3a-4f46-aec0-a6b023b99d48"/>
+					<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="52" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="66" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

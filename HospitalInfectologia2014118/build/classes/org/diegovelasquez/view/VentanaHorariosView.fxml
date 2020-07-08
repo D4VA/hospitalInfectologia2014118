@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.HorariosController">
+   <children>
+      <ImageView fitHeight="409.0" fitWidth="665.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="299.0" layoutY="14.0" style="-fx-background-color: gold;" text="Horarios">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="35.0" text="Código Horario :" textFill="WHITE" />
+      <Label layoutX="17.0" layoutY="66.0" text="Horario Inicio :" textFill="WHITE" />
+      <Label layoutX="16.0" layoutY="99.0" text="Horario Salida :" textFill="WHITE" />
+      <Label layoutX="374.0" layoutY="34.0" text="Lunes :" textFill="WHITE" />
+      <Label layoutX="374.0" layoutY="68.0" text="Martes :" textFill="WHITE" />
+      <Label layoutX="374.0" layoutY="103.0" text="Miercoles :" textFill="WHITE" />
+      <Label layoutX="374.0" layoutY="138.0" text="Jueves :" textFill="WHITE" />
+      <Label layoutX="373.0" layoutY="169.0" text="Viernes :" textFill="WHITE" />
+      <ComboBox fx:id="cmbCodHorario" layoutX="105.0" layoutY="31.0" prefWidth="150.0" />
+      <GridPane fx:id="grpHorarioInicio" layoutX="105.0" layoutY="61.0" prefHeight="30.0" prefWidth="150.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DatePicker fx:id="dtpHorarioInicio" editable="false" prefHeight="30.0" prefWidth="150.0" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="grpHorarioSalida" layoutX="105.0" layoutY="95.0" prefHeight="30.0" prefWidth="150.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DatePicker fx:id="dtpHorarioSalida" editable="false" prefHeight="30.0" prefWidth="150.0" />
+         </children>
+      </GridPane>
+      <TextField fx:id="txtLunes" editable="false" layoutX="434.0" layoutY="30.0" />
+      <TextField fx:id="txtMartes" editable="false" layoutX="434.0" layoutY="65.0" />
+      <TextField fx:id="txtViernes" editable="false" layoutX="434.0" layoutY="165.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="txtJueves" editable="false" layoutX="434.0" layoutY="132.0" />
+      <TextField fx:id="txtMiercoles" editable="false" layoutX="434.0" layoutY="99.0" AnchorPane.bottomAnchor="285.0" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="71.0" AnchorPane.topAnchor="99.0" />
+      <TableView fx:id="tblHorarios" layoutX="81.0" layoutY="196.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="568.0">
+        <columns>
+          <TableColumn fx:id="colCodHorario" prefWidth="103.0" text="Código Horario" />
+          <TableColumn fx:id="colHorarioInicio" prefWidth="83.0" text="Horario Inicio" />
+            <TableColumn fx:id="colHorarioSalida" minWidth="0.0" prefWidth="97.0" text="Horario Salida" />
+            <TableColumn fx:id="colLunes" minWidth="0.0" prefWidth="50.0" text="Lunes" />
+            <TableColumn fx:id="colMartes" minWidth="1.0" prefWidth="55.0" text="Martes" />
+            <TableColumn fx:id="colMiercoles" minWidth="2.0" prefWidth="72.0" text="Miercoles" />
+            <TableColumn fx:id="colJueves" minWidth="9.0" prefWidth="50.0" text="Jueves" />
+            <TableColumn fx:id="colViernes" prefWidth="57.0" text="Viernes" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="14.0" layoutY="220.0" mnemonicParsing="false" onAction="#Agregar" text="Agregar" />
+      <Button fx:id="btnEliminar" layoutX="14.0" layoutY="257.0" mnemonicParsing="false" onAction="#Eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="14.0" layoutY="293.0" mnemonicParsing="false" onAction="#Editar" prefHeight="25.0" prefWidth="59.0" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="14.0" layoutY="328.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <ImageView fitHeight="51.0" fitWidth="45.0" layoutX="604.0" layoutY="12.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Icono.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

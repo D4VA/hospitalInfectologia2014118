@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.PacientesController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="649.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="302.0" layoutY="127.0" text="DPI :" textFill="WHITE" AnchorPane.leftAnchor="302.0" />
+      <Label layoutX="21.0" layoutY="98.0" text="Apellidos :" textFill="WHITE" AnchorPane.leftAnchor="21.0" />
+      <Label layoutX="21.0" layoutY="69.0" text="Nombres :" textFill="#f8f8f8" AnchorPane.leftAnchor="21.0" />
+      <Label layoutX="299.0" layoutY="41.0" text="Fecha de Nacimiento :" textFill="WHITE" AnchorPane.leftAnchor="299.0" />
+      <Label layoutX="154.0" layoutY="127.0" text="Edad :" textFill="WHITE" AnchorPane.leftAnchor="154.0" />
+      <Label layoutX="299.0" layoutY="98.0" text="Dirección :" textFill="WHITE" AnchorPane.leftAnchor="299.0" />
+      <Label layoutX="299.0" layoutY="69.0" text="Ocupación :" textFill="WHITE" AnchorPane.leftAnchor="299.0" />
+      <Label layoutX="21.0" layoutY="127.0" prefHeight="17.0" prefWidth="39.0" text="Sexo :" textFill="WHITE" AnchorPane.leftAnchor="21.0" />
+      <TextField fx:id="txtnombres" editable="false" layoutX="80.0" layoutY="65.0" prefHeight="25.0" prefWidth="180.0" AnchorPane.rightAnchor="380.0" />
+      <TextField fx:id="txtapellidos" editable="false" layoutX="80.0" layoutY="94.0" prefHeight="25.0" prefWidth="180.0" AnchorPane.rightAnchor="380.0" />
+      <TextField fx:id="txtedad" editable="false" layoutX="189.0" layoutY="123.0" prefHeight="25.0" prefWidth="70.0" />
+      <TextField fx:id="txtsexo" editable="false" layoutX="60.0" layoutY="123.0" prefHeight="25.0" prefWidth="88.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="492.0" />
+      <TextField fx:id="txtocupacion" editable="false" layoutX="369.0" layoutY="65.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="txtdireccion" editable="false" layoutX="369.0" layoutY="94.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="txtdpi" editable="false" layoutX="331.0" layoutY="123.0" prefHeight="25.0" prefWidth="229.0" />
+      <TableView fx:id="tblPacientes" layoutX="9.0" layoutY="152.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="187.0" prefWidth="625.0">
+        <columns>
+          <TableColumn fx:id="colcodPaciente" editable="false" maxWidth="200.0" minWidth="5.0" prefWidth="100.0" text="Código Paciente" />
+          <TableColumn fx:id="colnombres" prefWidth="63.0" text="Nombres" />
+            <TableColumn fx:id="colapellidos" prefWidth="68.0" text="Apellidos" />
+            <TableColumn fx:id="coledad" prefWidth="36.0" text="Edad" />
+            <TableColumn fx:id="colsexo" prefWidth="55.0" text="Sexo" />
+            <TableColumn fx:id="colfechaDeNacimiento" prefWidth="126.0" text="Fecha de Nacimiento" />
+            <TableColumn fx:id="colocupacion" prefWidth="69.0" text="Ocupación" />
+            <TableColumn fx:id="coldireccion" minWidth="9.0" prefWidth="132.0" text="Dirección" />
+            <TableColumn fx:id="coldpi" minWidth="4.0" prefWidth="81.0" text="DPI" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="80.0" layoutY="355.0" mnemonicParsing="false" onAction="#Agregar" stylesheets="@../style/Button.css" text="Agregar" />
+      <Button fx:id="btnReportar" layoutX="453.0" layoutY="355.0" mnemonicParsing="false" onAction="#imprimirReporte" stylesheets="@../style/Button.css" text="Reporte" />
+      <Button fx:id="btnEditar" layoutX="331.0" layoutY="355.0" mnemonicParsing="false" onAction="#editar" prefHeight="35.0" prefWidth="101.0" stylesheets="@../style/Button.css" text="Editar" />
+      <Button fx:id="btnEliminar" layoutX="210.0" layoutY="355.0" mnemonicParsing="false" onAction="#eliminar" stylesheets="@../style/Button.css" text="Eliminar" />
+      <ImageView fitHeight="58.0" fitWidth="80.0" layoutX="568.0" layoutY="10.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Icono.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="289.0" layoutY="10.0" style="-fx-background-color: gold;" text="Pacientes">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtfechaDeNacimiento" editable="false" layoutX="417.0" layoutY="37.0" prefHeight="25.0" prefWidth="142.0" />
+      <Label layoutX="21.0" layoutY="39.0" text="Código Paciente :" textFill="WHITE" />
+      <ComboBox fx:id="cmbcodPaciente" layoutX="118.0" layoutY="35.0" prefHeight="25.0" prefWidth="142.0" />
+      <Label layoutX="578.0" layoutY="69.0" prefHeight="17.0" prefWidth="39.0" style="-fx-background-color: gold;" text="Volver" />
+   </children>
+</AnchorPane>

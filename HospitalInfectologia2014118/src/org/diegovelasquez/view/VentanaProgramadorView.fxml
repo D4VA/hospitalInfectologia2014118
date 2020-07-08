@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.ProgramadorController">
+   <children>
+      <ImageView fitHeight="377.0" fitWidth="600.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="286.0" layoutY="218.0" text="Diego Andres Velásquez Avila" textFill="WHITE" />
+      <Label layoutX="286.0" layoutY="245.0" text="IN5BV" textFill="WHITE" />
+      <Label layoutX="286.0" layoutY="268.0" text="Centro Educativo Tecnico Laboral Kinal" textFill="WHITE" />
+      <Label layoutX="351.0" layoutY="14.0" text="Programador" textFill="WHITE" />
+      <Hyperlink layoutX="498.0" layoutY="31.0" onAction="#menuPrincipal" text="Menu Principal" />
+      <ImageView fitHeight="145.0" fitWidth="222.0" layoutX="22.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FotoProgramador.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.diegovelasquez.controller.TurnoController">
+   <children>
+      <ImageView fitHeight="409.0" fitWidth="630.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FondoAzul.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="296.0" layoutY="14.0" style="-fx-background-color: gold;" text="Turno">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="35.0" text="Codigo Turno :" textFill="WHITE" />
+      <Label layoutX="35.0" layoutY="65.0" text="Fecha Turno:" textFill="WHITE" />
+      <Label layoutX="35.0" layoutY="95.0" text="Fecha Cita :" textFill="WHITE" />
+      <Label layoutX="35.0" layoutY="125.0" text="Valor Cita :" textFill="WHITE" />
+      <Label layoutX="280.0" layoutY="50.0" text="Código Medico Especialidad :" textFill="WHITE" />
+      <Label layoutX="280.0" layoutY="80.0" text="Código Responsable Turno :" textFill="WHITE" />
+      <Label layoutX="280.0" layoutY="110.0" text="Código Paciente:" textFill="WHITE" />
+      <ComboBox fx:id="cmbcodTurno" layoutX="115.0" layoutY="31.0" prefWidth="150.0" />
+      <TextField fx:id="txtvalorCita" editable="false" layoutX="109.0" layoutY="121.0" prefHeight="25.0" prefWidth="156.0" />
+      <TextField fx:id="txtcodMedicoEspecialidad" editable="false" layoutX="440.0" layoutY="47.0" />
+      <TextField fx:id="txtcodResponsableTurno" editable="false" layoutX="440.0" layoutY="76.0" />
+      <TextField fx:id="txtcodPaciente" editable="false" layoutX="440.0" layoutY="106.0" />
+      <TableView fx:id="tblTurno" layoutX="3.0" layoutY="146.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="624.0">
+        <columns>
+          <TableColumn fx:id="colcodTurno" prefWidth="68.0" text="Cod. Turno" />
+          <TableColumn fx:id="colcodMedicoEspecialidad" prefWidth="136.0" text="Cod. Med. Especialidad" />
+            <TableColumn fx:id="colcodResponsableTurno" prefWidth="141.0" text="Cod. Responsable Turno" />
+            <TableColumn fx:id="colcodPaciente" minWidth="3.0" prefWidth="81.0" text="Cod. Paciente" />
+            <TableColumn fx:id="colfechaTurno" minWidth="7.0" prefWidth="74.0" text="Fecha Turno" />
+            <TableColumn fx:id="colfechaCita" minWidth="8.0" prefWidth="62.0" text="Fecha Cita" />
+            <TableColumn fx:id="colvalorCita" prefWidth="60.0" text="Valor Cita" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="160.0" layoutY="355.0" mnemonicParsing="false" onAction="#Agregar" text="Guardar" />
+      <Button fx:id="btnEliminar" layoutX="230.0" layoutY="355.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="300.0" layoutY="355.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="59.0" text="Editar" />
+      <Button fx:id="btnReportar" layoutX="370.0" layoutY="355.0" mnemonicParsing="false" onAction="#imprimirReporte" text="Reporte" />
+      <ImageView fitHeight="41.0" fitWidth="45.0" layoutX="588.0" layoutY="3.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Icono.png" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="grpfechaTurno" layoutX="110.0" layoutY="64.0" prefHeight="25.0" prefWidth="156.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DatePicker fx:id="dtpfechaTurno" editable="false" prefHeight="0.0" prefWidth="156.0" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="grpfechaCita" layoutX="110.0" layoutY="94.0" prefHeight="25.0" prefWidth="156.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DatePicker fx:id="dtpfechaCita" editable="false" prefHeight="0.0" prefWidth="156.0" showWeekNumbers="true" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
